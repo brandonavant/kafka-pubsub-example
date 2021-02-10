@@ -1,0 +1,12 @@
+{
+  "name": "consumer",
+  "version": "1.0.0",
+  "description": "Consumes Kafka topic messages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Brandon Avant",
+  "license": "MIT"
+}

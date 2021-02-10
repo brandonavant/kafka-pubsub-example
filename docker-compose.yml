@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  producer-service:
+    container_name: producer-service
+    image: "node:15-alpine"
+    user: "node"
+    working_dir: /home/node/app
+    environment: 
+      - NODE_ENV=production
+    volumes:
+      - "./src/producer/app:/home/node/app"
+    command: "npm start"
+  consumer-service:
+    container_name: consumer-service
+    image: "node:15-alpine"
+    user: "node"
+    working_dir: /home/node/app
+    environment: 
+      - NODE_ENV=production
+    volumes:
+      - "./src/consumer/app:/home/node/app"
+    command: "npm start"
+    depends_on: 
+      - producer-service
